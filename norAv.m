@@ -6,7 +6,7 @@ a = double(a);
 
 [m,n] = size(a);
 
-msk = input("Type the size of the normal average mask filter");
+msk = input("Type the size of the normal average mask filter\n");
 
 mm = (msk-1)/2;
 
@@ -18,8 +18,8 @@ for i = 1+mm:m+mm
     end
 end
 %imshow(b,[])
-for i = 1+mm:m
-    for j = 1+mm:n
+for i = 1+mm:m+mm
+    for j = 1+mm:n+mm
         c=b(i-mm:i+mm,j-mm:j+mm);
         b(i,j) = mean(mean(c));
     end
