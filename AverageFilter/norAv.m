@@ -1,7 +1,8 @@
 clear all;
 close all;
 
-a = imread('cameraman.tif');
+f = input('What file do you want to apply median filter\n');
+a = imread(f);
 a = double(a);
 
 [m,n] = size(a);
@@ -24,4 +25,5 @@ for i = 1+mm:m+mm
         b(i,j) = mean(mean(c));
     end
 end
-imshow(b,[])
+subplot(1,2,1);imshow(a,[]);
+subplot(1,2,2);imshow(b,[]);
